@@ -6,6 +6,7 @@ where id%2=0
 select
 count(city) - count(distinct city)
 from station
+--ex3: chưa làm
 -- ex4
 SELECT
 round(cast(SUM(order_occurrences*item_count)/sum(order_occurrences) as decimal),1)
