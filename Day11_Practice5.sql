@@ -12,3 +12,13 @@ from emails
 left join texts
 on emails.email_id=texts.email_id
 --ex3
+SELECT age_bucket,
+sum(
+  case when activity_type='open'
+  then time_spent = time_spent
+  else time_spent=0
+  end)/sum(time_spent) as open_perc
+from activities
+inner join age_breakdown
+on activities.user_id=age_breakdown.user_id
+group by age_bucket
